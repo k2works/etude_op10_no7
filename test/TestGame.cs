@@ -21,7 +21,11 @@ namespace test
             Game game = new Game();
             game.Add(5);
             game.Add(4);
-            Assert.AreEqual(9, game.Score);
+            game.Add(7);
+            game.Add(2);
+            Assert.AreEqual(18, game.Score);
+            Assert.AreEqual(9, game.ScoreForFrame(1));
+            Assert.AreEqual(18, game.ScoreForFrame(2));
         }
     }
 }
