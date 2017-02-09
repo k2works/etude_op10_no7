@@ -14,5 +14,14 @@ namespace test
             game.Add(5);
             Assert.AreEqual(5, game.Score);
         }
+
+        [Test]
+        public void TestTwoThrowsNoMark()
+        {
+            Game game = new Game();
+            game.Add(5);
+            game.Add(4);
+            Assert.AreEqual(9, game.Score);
+        }
     }
 }
