@@ -13,5 +13,10 @@
         {
             score += pins;
         }
+
+        public int ScoreForFrame(int frame)
+        {
+            return 0;
+        }
     }
 }
