@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace test
 {
     [TestFixture]
-    public class TestGame
+    public class GameTest
     {
         [Test]
         public void TestOneThrow()

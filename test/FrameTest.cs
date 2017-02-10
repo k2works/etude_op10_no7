@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace test
 {
     [TestFixture]
-    public class TestFrame
+    public class FrameTest
     {
         [Test]
         public void TestScoreNoThrows()
