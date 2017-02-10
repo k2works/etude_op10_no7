@@ -17,12 +17,15 @@
             score += pins;
         }
 
-        public int ScoreForFrame(int frame)
+        public int ScoreForFrame(int theFrame)
         {
+            int ball = 0;
             int score = 0;
-            for(int ball = 0; frame > 0 && (ball < currentThrow); ball+=2, frame--)
+            for(int currentFrame = 0;
+                currentFrame < theFrame;
+                currentFrame++)
             {
-                score += throws[ball] + throws[ball + 1];
+                score += throws[ball++] + throws[ball++];
             }
 
             return score;
