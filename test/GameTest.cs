@@ -36,6 +36,10 @@ namespace test
         [Test]
         public void TestSimpleSpare()
         {
+            game.Add(3);
+            game.Add(7);
+            game.Add(3);
+            Assert.AreEqual(13, game.ScoreForFrame(1));
         }
     }
 }
