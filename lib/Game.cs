@@ -25,7 +25,9 @@
                 currentFrame < theFrame;
                 currentFrame++)
             {
-                score += throws[ball++] + throws[ball++];
+                int firstThrow = throws[ball++];
+                int secondThrow = throws[ball++];
+                score += firstThrow + secondThrow;
             }
 
             return score;
