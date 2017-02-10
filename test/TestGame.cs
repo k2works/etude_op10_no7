@@ -27,5 +27,11 @@ namespace test
             Assert.AreEqual(9, game.ScoreForFrame(1));
             Assert.AreEqual(18, game.ScoreForFrame(2));
         }
+
+        [Test]
+        public void TestSimpleSpare()
+        {
+            Game game = new Game();
+        }
     }
 }
