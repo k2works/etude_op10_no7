@@ -6,11 +6,17 @@ namespace test
     [TestFixture]
     public class GameTest
     {
+        private Game game;
+
+        [SetUp]
+        public void SetUp()
+        {
+            game = new Game();
+        }
+
         [Test]
         public void TestOneThrow()
         {
-            Game game = new Game();
-
             game.Add(5);
             Assert.AreEqual(5, game.Score);
         }
@@ -18,7 +24,6 @@ namespace test
         [Test]
         public void TestTwoThrowsNoMark()
         {
-            Game game = new Game();
             game.Add(5);
             game.Add(4);
             game.Add(7);
@@ -31,7 +36,6 @@ namespace test
         [Test]
         public void TestSimpleSpare()
         {
-            Game game = new Game();
         }
     }
 }
