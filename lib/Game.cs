@@ -27,7 +27,14 @@
             {
                 int firstThrow = throws[ball++];
                 int secondThrow = throws[ball++];
-                score += firstThrow + secondThrow;
+
+                int frameScore = firstThrow + secondThrow;
+
+                // spare needs next frames first throw
+                if (frameScore == 10)
+                    score += frameScore + throws[ball++];
+                else
+                    score += frameScore;
             }
 
             return score;
