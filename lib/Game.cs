@@ -5,10 +5,12 @@
         private int score;
         private int[] throws = new int[21];
         private int currentThrow;
+        private int currentFrame;
+        private bool isFirstThrow = true;
 
         public int CurrentFrame
         {
-            get { return 1 + (currentThrow - 1) / 2; }
+            get { return currentFrame; }
         }
 
         public int Score
@@ -20,6 +22,16 @@
         {
             throws[currentThrow++] = pins;
             score += pins;
+
+            if (isFirstThrow)
+            {
+                isFirstThrow = false;
+                currentFrame++;
+            }
+            else
+            {
+                isFirstThrow = true;
+            }
         }
 
         public int ScoreForFrame(int theFrame)
