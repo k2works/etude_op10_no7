@@ -6,6 +6,11 @@
         private int[] throws = new int[21];
         private int currentThrow;
 
+        public int CurrentFrame
+        {
+            get { return 1; }
+        }
+
         public int Score
         {
             get { return score; }
