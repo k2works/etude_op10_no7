@@ -27,11 +27,8 @@ namespace test
         {
             game.Add(5);
             game.Add(4);
-            game.Add(7);
-            game.Add(2);
-            Assert.AreEqual(18, game.Score);
             Assert.AreEqual(9, game.ScoreForFrame(1));
-            Assert.AreEqual(18, game.ScoreForFrame(2));
+            Assert.AreEqual(1, game.CurrentFrame);
         }
 
         [Test]
