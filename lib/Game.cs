@@ -32,7 +32,7 @@
 
                 // spare needs next frames first throw
                 if (frameScore == 10)
-                    score += frameScore + throws[ball++];
+                    score += frameScore + throws[ball];
                 else
                     score += frameScore;
             }
