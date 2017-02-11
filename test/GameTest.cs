@@ -28,7 +28,7 @@ namespace test
             game.Add(5);
             game.Add(4);
             Assert.AreEqual(9, game.ScoreForFrame(1));
-            Assert.AreEqual(1, game.CurrentFrame);
+            Assert.AreEqual(2, game.CurrentFrame);
         }
 
         [Test]
@@ -61,7 +61,7 @@ namespace test
             Assert.AreEqual(18, game.Score);
             Assert.AreEqual(9, game.ScoreForFrame(1));
             Assert.AreEqual(18, game.ScoreForFrame(2));
-            Assert.AreEqual(2, game.CurrentFrame);
+            Assert.AreEqual(3, game.CurrentFrame);
         }
     }
 }

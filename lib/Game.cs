@@ -5,7 +5,7 @@
         private int score;
         private int[] throws = new int[21];
         private int currentThrow;
-        private int currentFrame;
+        private int currentFrame = 1;
         private bool isFirstThrow = true;
 
         public int CurrentFrame
@@ -31,11 +31,11 @@
             if (isFirstThrow)
             {
                 isFirstThrow = false;
-                currentFrame++;
             }
             else
             {
                 isFirstThrow = true;
+                currentFrame++;
             }
         }
 
