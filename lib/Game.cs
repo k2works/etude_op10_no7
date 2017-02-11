@@ -8,7 +8,7 @@
 
         public int CurrentFrame
         {
-            get { return 1; }
+            get { return 1 + (currentThrow - 1) / 2; }
         }
 
         public int Score
