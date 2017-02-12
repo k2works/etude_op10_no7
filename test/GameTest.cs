@@ -38,6 +38,8 @@ namespace test
             game.Add(7);
             game.Add(3);
             Assert.AreEqual(13, game.ScoreForFrame(1));
+            Assert.AreEqual(2, game.CurrentFrame);
+
         }
 
         [Test]
@@ -49,6 +51,7 @@ namespace test
             game.Add(2);
             Assert.AreEqual(13, game.ScoreForFrame(1));
             Assert.AreEqual(18, game.ScoreForFrame(2));
+            Assert.AreEqual(3, game.CurrentFrame);
         }
 
         [Test]
