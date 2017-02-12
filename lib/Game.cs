@@ -13,9 +13,9 @@
             get { return currentFrame; }
         }
 
-        public int Score
+        public int Score()
         {
-            get { return score; }
+            return ScoreForFrame(CurrentFrame - 1);
         }
 
         public void Add(int pins)
