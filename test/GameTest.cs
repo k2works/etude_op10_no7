@@ -1,6 +1,8 @@
-﻿using System.Net.Security;
+﻿using System.IO.Compression;
+using System.Net.Security;
 using lib;
 using NUnit.Framework;
+using NUnit.Framework.Internal;
 
 namespace test
 {
@@ -70,6 +72,17 @@ namespace test
             Assert.AreEqual(19, game.ScoreForFrame(1));
             Assert.AreEqual(28, game.Score());
             Assert.AreEqual(3, game.CurrentFrame);
+        }
+
+        [Test]
+        public void TestPerfectGame()
+        {
+            for (int i = 0; i < 12; i++)
+            {
+                game.Add(10);
+            }
+            Assert.AreEqual(300, game.Score());
+            Assert.AreEqual(10, game.CurrentFrame);
         }
     }
 }
