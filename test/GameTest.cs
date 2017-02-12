@@ -1,5 +1,6 @@
 ﻿using System.IO.Compression;
 using System.Net.Security;
+using System.Reflection.PortableExecutable;
 using lib;
 using NUnit.Framework;
 using NUnit.Framework.Internal;
@@ -83,6 +84,20 @@ namespace test
             }
             Assert.AreEqual(300, game.Score());
             Assert.AreEqual(11, game.CurrentFrame);
+        }
+
+        [Test]
+        public void TestEndOfArray()
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                game.Add(0);
+                game.Add(0);
+            }
+            game.Add(2);
+            game.Add(8); // 10th frame spare
+            game.Add(10); // Strike in last position of array.
+            Assert.AreEqual(20, game.Score());
         }
     }
 }
