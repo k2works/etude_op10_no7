@@ -15,14 +15,6 @@ namespace test
         }
 
         [Test]
-        public void TestOneThrow()
-        {
-            game.Add(5);
-            Assert.AreEqual(5, game.Score());
-            Assert.AreEqual(1, game.CurrentFrame);
-        }
-
-        [Test]
         public void TestTwoThrowsNoMark()
         {
             game.Add(5);
