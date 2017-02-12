@@ -1,4 +1,5 @@
-﻿using lib;
+﻿using System.Net.Security;
+using lib;
 using NUnit.Framework;
 
 namespace test
@@ -57,6 +58,17 @@ namespace test
             Assert.AreEqual(18, game.Score());
             Assert.AreEqual(9, game.ScoreForFrame(1));
             Assert.AreEqual(18, game.ScoreForFrame(2));
+            Assert.AreEqual(3, game.CurrentFrame);
+        }
+
+        [Test]
+        public void TestSimpleStrike()
+        {
+            game.Add(10);
+            game.Add(3);
+            game.Add(6);
+            Assert.AreEqual(19, game.ScoreForFrame(1));
+            Assert.AreEqual(28, game.Score());
             Assert.AreEqual(3, game.CurrentFrame);
         }
     }
