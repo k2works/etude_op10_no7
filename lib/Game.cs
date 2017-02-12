@@ -23,14 +23,17 @@
             throws[currentThrow++] = pins;
             score += pins;
 
-            AdjustCurrentFrame();
+            AdjustCurrentFrame(pins);
         }
 
-        private void AdjustCurrentFrame()
+        private void AdjustCurrentFrame(int pins)
         {
             if (isFirstThrow)
             {
-                isFirstThrow = false;
+                if (pins == 10) //Strike
+                    currentFrame++;
+                else
+                    isFirstThrow = false;
             }
             else
             {
@@ -48,15 +51,21 @@
                 currentFrame++)
             {
                 int firstThrow = throws[ball++];
-                int secondThrow = throws[ball++];
-
-                int frameScore = firstThrow + secondThrow;
-
-                // spare needs next frames first throw
-                if (frameScore == 10)
-                    score += frameScore + throws[ball];
+                if (firstThrow == 10) //Strike
+                {
+                    score += 10 + throws[ball] + throws[ball + 1];
+                }
                 else
-                    score += frameScore;
+                {
+                    int secondThrow = throws[ball++];
+                    int frameScore = firstThrow + secondThrow;
+
+                    // spare needs next frames first throw
+                    if (frameScore == 10)
+                        score += frameScore + throws[ball];
+                    else
+                        score += frameScore;
+                }
             }
 
             return score;
