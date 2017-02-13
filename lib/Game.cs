@@ -55,7 +55,6 @@
                 currentFrame < theFrame;
                 currentFrame++)
             {
-                firstThrow = throws[ball];
                 if (Strike())
                 {
                     ball++;
@@ -70,23 +69,9 @@
             return score;
         }
 
-        private bool Strike()
-        {
-            return throws[ball] == 10;
-        }
-
-        private int NextTwoBalls
-        {
-            get { return (throws[ball] + throws[ball + 1]); }
-        }
-
         private int HandleSecondThrow()
         {
             int score =0;
-            secondThrow = throws[ball + 1];
-
-            int frameScore = firstThrow + secondThrow;
-
             // spare needs next frames first throw
             if (IsSpare())
             {
@@ -99,6 +84,16 @@
                 ball += 2;
             }
             return score;
+        }
+
+        private bool Strike()
+        {
+            return throws[ball] == 10;
+        }
+
+        private int NextTwoBalls
+        {
+            get { return (throws[ball] + throws[ball + 1]); }
         }
 
         private int TwoBallsInFrame
