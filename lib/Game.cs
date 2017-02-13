@@ -7,6 +7,9 @@
         private int currentThrow;
         private int currentFrame = 1;
         private bool isFirstThrow = true;
+        private int ball;
+        private int firstThrow;
+        private int secondThrow;
 
         public int CurrentFrame
         {
@@ -46,20 +49,20 @@
 
         public int ScoreForFrame(int theFrame)
         {
-            int ball = 0;
+            ball = 0;
             int score = 0;
             for(int currentFrame = 0;
                 currentFrame < theFrame;
                 currentFrame++)
             {
-                int firstThrow = throws[ball++];
+                firstThrow = throws[ball++];
                 if (firstThrow == 10) //Strike
                 {
                     score += 10 + throws[ball] + throws[ball + 1];
                 }
                 else
                 {
-                    int secondThrow = throws[ball++];
+                    secondThrow = throws[ball++];
                     int frameScore = firstThrow + secondThrow;
 
                     // spare needs next frames first throw
