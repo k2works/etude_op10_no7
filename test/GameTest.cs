@@ -133,5 +133,16 @@ namespace test
             game.Add(9);
             Assert.AreEqual(299, game.Score());
         }
+
+        [Test]
+        public void TestTenthFrameSpare()
+        {
+            for (int i=0; i<9; i++)
+                game.Add(10);
+            game.Add(9);
+            game.Add(1);
+            game.Add(1);
+            Assert.AreEqual(270, game.Score());
+        }
     }
 }
