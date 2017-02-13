@@ -62,17 +62,24 @@
                 }
                 else
                 {
-                    secondThrow = throws[ball++];
-                    int frameScore = firstThrow + secondThrow;
-
-                    // spare needs next frames first throw
-                    if (frameScore == 10)
-                        score += frameScore + throws[ball];
-                    else
-                        score += frameScore;
+                    score += HandleSecondThrow();
                 }
             }
 
+            return score;
+        }
+
+        private int HandleSecondThrow()
+        {
+            int score =0;
+            secondThrow = throws[ball++];
+            int frameScore = firstThrow + secondThrow;
+
+            // spare needs next frames first throw
+            if (frameScore == 10)
+                score += frameScore + throws[ball];
+            else
+                score += frameScore;
             return score;
         }
     }
