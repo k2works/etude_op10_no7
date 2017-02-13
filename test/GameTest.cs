@@ -99,5 +99,30 @@ namespace test
             game.Add(10); // Strike in last position of array.
             Assert.AreEqual(20, game.Score());
         }
+
+        [Test]
+        public void TestSapleGame()
+        {
+            game.Add(1);
+            game.Add(4);
+            game.Add(4);
+            game.Add(5);
+            game.Add(6);
+            game.Add(4);
+            game.Add(5);
+            game.Add(5);
+            game.Add(10);
+            game.Add(0);
+            game.Add(1);
+            game.Add(7);
+            game.Add(3);
+            game.Add(6);
+            game.Add(4);
+            game.Add(10);
+            game.Add(2);
+            game.Add(8);
+            game.Add(6);
+            Assert.AreEqual(133, game.Score());
+        }
     }
 }
