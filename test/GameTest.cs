@@ -124,5 +124,14 @@ namespace test
             game.Add(6);
             Assert.AreEqual(133, game.Score());
         }
+
+        [Test]
+        public void TestHeartBreak()
+        {
+            for (int i=0; i<11; i++)
+                game.Add(10);
+            game.Add(9);
+            Assert.AreEqual(299, game.Score());
+        }
     }
 }
