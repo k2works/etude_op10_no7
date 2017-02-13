@@ -56,10 +56,10 @@
                 currentFrame++)
             {
                 firstThrow = throws[ball];
-                if (firstThrow == 10) //Strike
+                if (Strike())
                 {
                     ball++;
-                    score += 10 + throws[ball] + throws[ball + 1];
+                    score += 10 + NextTwoBalls;
                 }
                 else
                 {
@@ -68,6 +68,16 @@
             }
 
             return score;
+        }
+
+        private bool Strike()
+        {
+            return throws[ball] == 10;
+        }
+
+        private int NextTwoBalls
+        {
+            get { return (throws[ball] + throws[ball + 1]); }
         }
 
         private int HandleSecondThrow()
