@@ -88,20 +88,25 @@
             int frameScore = firstThrow + secondThrow;
 
             // spare needs next frames first throw
-            if (Spare())
+            if (IsSpare())
             {
                 ball += 2;
                 score += 10 + NextBall;
             }
             else
             {
+                score += TwoBallsInFrame;
                 ball += 2;
-                score += frameScore;
             }
             return score;
         }
 
-        private bool Spare()
+        private int TwoBallsInFrame
+        {
+            get { return throws[ball] + throws[ball + 1]; }
+        }
+
+        private bool IsSpare()
         {
             return throws[ball] + throws[ball+1] == 10;
         }
