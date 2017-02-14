@@ -34,9 +34,7 @@ namespace lib
         {
             if (isFirstThrow)
             {
-                if (pins == 10) //Strike
-                    AdvanceFrame();
-                else
+                if (AdjustFrameForStrike(pins) == false)
                     isFirstThrow = false;
             }
             else
@@ -44,6 +42,16 @@ namespace lib
                 isFirstThrow = true;
                 AdvanceFrame();
             }
+        }
+
+        private bool AdjustFrameForStrike(int pins)
+        {
+            if (pins == 10)
+            {
+                AdvanceFrame();
+                return true;
+            }
+            return false;
         }
 
         private void AdvanceFrame()
