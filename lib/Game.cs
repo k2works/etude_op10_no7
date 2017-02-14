@@ -75,6 +75,16 @@
             return score;
         }
 
+        private int NextTwoBallsForStrike
+        {
+            get { return (throws[ball + 1] + throws[ball + 2]); }
+        }
+
+        private int NextBallForSpare
+        {
+            get { return throws[ball + 2]; }
+        }
+
         private int HandleSecondThrow()
         {
             int score =0;
