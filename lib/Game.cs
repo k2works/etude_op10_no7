@@ -11,7 +11,7 @@ namespace lib
 
         public int Score
         {
-            get { return ScoreForFrame(CurrentFrame - 1); }
+            get { return ScoreForFrame(CurrentFrame); }
         }
 
         public int CurrentFrame
@@ -57,8 +57,8 @@ namespace lib
         private void AdvanceFrame()
         {
             currentFrame++;
-            if (currentFrame > 11)
-                currentFrame = 11;
+            if (currentFrame > 10)
+                currentFrame = 10;
         }
     }
 }
