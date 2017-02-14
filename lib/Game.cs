@@ -32,16 +32,13 @@ namespace lib
 
         private void AdjustCurrentFrame(int pins)
         {
-            if (isFirstThrow)
+            if ((isFirstThrow && pins == 10) || (!isFirstThrow))
             {
-                if (AdjustFrameForStrike(pins) == false)
-                    isFirstThrow = false;
+                AdvanceFrame();
+                isFirstThrow = true;
             }
             else
-            {
-                isFirstThrow = true;
-                AdvanceFrame();
-            }
+                isFirstThrow = false;
         }
 
         private bool AdjustFrameForStrike(int pins)
