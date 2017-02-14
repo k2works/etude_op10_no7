@@ -60,9 +60,15 @@
                     ball++;
                     score += 10 + NextTwoBalls;
                 }
+                else if (Spare())
+                {
+                    ball += 2;
+                    score += 10 + NextBall;
+                }
                 else
                 {
-                    score += HandleSecondThrow();
+                    score += TwoBallsInFrame;
+                    ball += 2;
                 }
             }
 
@@ -73,7 +79,7 @@
         {
             int score =0;
             // spare needs next frames first throw
-            if (IsSpare())
+            if (Spare())
             {
                 ball += 2;
                 score += 10 + NextBall;
@@ -101,7 +107,7 @@
             get { return throws[ball] + throws[ball + 1]; }
         }
 
-        private bool IsSpare()
+        private bool Spare()
         {
             return throws[ball] + throws[ball+1] == 10;
         }
