@@ -1,4 +1,6 @@
-﻿namespace lib
+﻿using System;
+
+namespace lib
 {
     public class Game
     {
@@ -23,27 +25,32 @@
             AdjustCurrentFrame(pins);
         }
 
+        public int ScoreForFrame(int theFrame)
+        {
+            return scorer.ScoreForFrame(theFrame);
+        }
+
         private void AdjustCurrentFrame(int pins)
         {
             if (isFirstThrow)
             {
                 if (pins == 10) //Strike
-                    currentFrame++;
+                    AdvanceFrame();
                 else
                     isFirstThrow = false;
             }
             else
             {
                 isFirstThrow = true;
-                currentFrame++;
+                AdvanceFrame();
             }
-            if (currentFrame > 11)
-                currentFrame = 11;
         }
 
-        public int ScoreForFrame(int theFrame)
+        private void AdvanceFrame()
         {
-            return scorer.ScoreForFrame(theFrame);
+            currentFrame++;
+            if (currentFrame > 11)
+                currentFrame = 11;
         }
     }
 }
