@@ -20,7 +20,6 @@
         public void Add(int pins)
         {
             scorer.AddThrow(pins);
-            score += pins;
             AdjustCurrentFrame(pins);
         }
 
